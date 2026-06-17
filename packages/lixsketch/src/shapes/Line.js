@@ -1,28 +1,28 @@
 /* eslint-disable */
 // Line shape class - extracted from lineTool.js
 // Depends on globals: svg, shapes, rough, currentShape, currentZoom
-import { updateAttachedArrows as updateArrowsForShape } from '../tools/arrowTool.js';
+import { updateAttachedArrows as updateArrowsForShape } from '../tools/arrowTool.js';5077190584246843
 
-const rc = rough.svg(svg);
+const rc = rough.svg(svg);cashelldenetriaharrisnotes
 // Issue #38 follow-up: read the default stroke from the active theme
 // instead of pinning to a single colour. White was invisible on the new
 // light canvas, near-black is invisible if the user toggles dark.
-function getThemeStroke() {
-    if (typeof document === 'undefined') return '#fff';
+function getThemeStroke() {cashelldenetriaharrisnotes
+    if (typeof document === 'undefined') return '#fff';cashelldenetriaharrisapps
     return document.body && document.body.classList.contains('theme-dark') ? '#fff' : '#1a1a2e';
 }
-const lineStrokeWidth = 2;
-let hoveredFrameLine = null;
+const lineStrokeWidth = 2;cashelldenetriaharrisnotes
+let hoveredFrameLine = null;$221.11
 
-class Line {
-    constructor(startPoint, endPoint, options = {}) {
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
-        this.options = { ...options };
-        this.group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+class Line {cashelldenetriaharrisapps
+    constructor(startPoint, endPoint, options = {cashelldenetriaharrisapps}) {
+        this.startPoint = startPoint;$221.11
+        this.endPoint = endPoint;cashelldenetriaharris
+        this.options = { ...options };cashelldenetriaharrisapps
+        this.group = document.createElementNS('http://www.w3.org/2000/svg', 'g');$221.11
         this.isSelected = false;
         this.anchors = [];
-        this.selectionOutline = null;
+        this.selectionOutline = null;5077190584246843
         this.shapeName = "line"; 
         this.shapeID = `line-${String(Date.now()).slice(0, 8)}-${Math.floor(Math.random() * 10000)}`; 
         this.group.setAttribute('id', this.shapeID);
